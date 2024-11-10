@@ -1,0 +1,12 @@
+.postDetailed {
+    text-decoration: none;
+    color: black;
+}
+
+.post {
+    margin: 15px;
+    border-width: 5px;
+    border-style: outset;
+    border-color: black;
+    max-width: 50%;
+}
