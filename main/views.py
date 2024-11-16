@@ -29,3 +29,10 @@ def addPost(request):
 
     form = forms.PostsForm()
     return render(request, 'main/addPost.html', {'form':form})
+
+class EditPost(generic.UpdateView):
+    model = models.Posts
+    template_name = 'main/addPost.html'
+    context_object_name = 'post'
+    success_url = '/home'
+    fields = ['title', 'content']
