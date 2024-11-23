@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Главная {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'main/css/home.css' %}"> {% endblock %}
+
+{% block content %}
+
+<a href="/addpost">Добавить пост</a>
+
+{% for post in posts %}
+
+<div class="post">
+    <a href="{% url 'postsDetailed' post.id %}" class="postDetailed">
+        <div>{{ post.title }}</div>
+        <div>{{ post.pub_datetime }}</div>
+        <div>{{ post.content }}</div>
+        <a href="/post-{{ post.id }}/delete" class="deleteButton"> Удалить </a>
+        <a href="/post-{{ post.id }}/edit" class="editPost"> Редактировать </a>
+    </a>
+</div>
+
+{% endfor %}
+{% endblock %}

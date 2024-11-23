@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Добавление поста {% endblock %}
+{% block style %} <link rel="stylesheet" href="{% static 'main/css/addPost.css' %}"> {% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.title }}
+
+    {{ form.content }}
+    
+    <button type="submit"> Добавить </button>
+</form>
+{% endblock %}
